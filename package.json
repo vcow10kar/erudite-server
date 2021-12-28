@@ -1,0 +1,38 @@
+{
+  "name": "erudite-server",
+  "version": "1.0.0",
+  "description": "Server side repo of the Erudite Student Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcow10kar/erudite-server.git"
+  },
+  "keywords": [
+    "student",
+    "management",
+    "system",
+    "erudite",
+    "contests",
+    "tests",
+    "subjects"
+  ],
+  "author": "Vaishnavi Kawthankar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcow10kar/erudite-server/issues"
+  },
+  "homepage": "https://github.com/vcow10kar/erudite-server#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.4"
+  }
+}
