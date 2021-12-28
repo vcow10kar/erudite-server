@@ -4,7 +4,10 @@
   "description": "Server side repo of the Erudite Student Management System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "start:heroku": "node src/server.js"
   },
   "repository": {
     "type": "git",
