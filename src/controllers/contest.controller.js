@@ -24,7 +24,7 @@ router.post('/',
     body('tags')
     .notEmpty()
     .withMessage('Contest tags are required!'),
-    body('time')
+    body('duration')
     .notEmpty()
     .withMessage('Contest duration is required!'),
     body('marks')
@@ -35,7 +35,10 @@ router.post('/',
     .withMessage('Batch No. is required!'),
 
     async(req, res) => {
+        //console.log("Request Body:", req.body);
         const errors = validationResult(req);
+
+       //console.log(errors);
 
         let finalErrors = null;
         if(!errors.isEmpty()) {
@@ -50,10 +53,15 @@ router.post('/',
         }
 
         try {
+
+            //console.log("Request Body:", req.body);
             const contest = await Contest.create(req.body);
+
+            //console.log(contest);
 
             return res.status(201).send({contest: contest});
         } catch(err) {
+            //console.log(err);
             return res.status(400).send({error: err.message});
         }
     }

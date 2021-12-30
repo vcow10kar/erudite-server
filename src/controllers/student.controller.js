@@ -26,6 +26,7 @@ router.post('/',
     .withMessage('Password should be 8-20 characters long!'),
 
     async(req, res) => {
+        //console.log(req.body);
         const errors = validationResult(req);
 
         let finalErrors = null;
@@ -45,6 +46,7 @@ router.post('/',
 
             return res.status(201).send({student});
         } catch(err) {
+            //console.log(err);
             return res.status(400).send({error: err.message});
         }
     }
