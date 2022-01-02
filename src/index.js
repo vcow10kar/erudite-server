@@ -22,6 +22,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/', (req, res) => {
+    return res.status(200).send('Hello');
+})
 app.use('/admin', adminController);
 app.use('/student', studentController);
 app.use('/contest', contestController);
