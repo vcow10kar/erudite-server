@@ -8,7 +8,7 @@ const adminController = require('./controllers/admin.controller');
 const studentController = require('./controllers/student.controller');
 const contestController = require('./controllers/contest.controller');
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: 'https://erudite-sms.vercel.app', credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
