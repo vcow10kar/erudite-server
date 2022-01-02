@@ -52,5 +52,10 @@ router.post('/',
     }
 );
 
+router.delete('/:id', async (req, res) => {
+    const admin = await Student.findByIdAndDelete({_id: req.params.id});
+    return res.status(202).send({admin});
+})
+
 
 module.exports = router;
