@@ -1,0 +1,1 @@
+# Erudite Student Management System [Server Repo]
