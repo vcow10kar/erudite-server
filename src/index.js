@@ -56,4 +56,10 @@ app.get('/getAdmin', (req, res) => {
     res.send(req.user);
 });
 
+app.get('/auth/logout', (req, res) => {
+    //console.log('Logout requested...');
+    req.logout();
+    return res.send('done');
+})
+
 module.exports = app;
