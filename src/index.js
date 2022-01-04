@@ -3,13 +3,14 @@ const app = express();
 const cors = require('cors');
 const session = require('express-session');
 const passport = require('./config/passport');
+require('dotenv').config();
 
 const adminController = require('./controllers/admin.controller');
 const studentController = require('./controllers/student.controller');
 const contestController = require('./controllers/contest.controller');
 const authController = require('./controllers/auth.controller');
 
-app.use(cors({ origin: 'https://erudite-sms.vercel.app', credentials: true }));
+app.use(cors({ origin: `${process.env.FRONTEND_URL}`, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
@@ -50,7 +51,7 @@ app.get(
     "/auth/google/callback",
     passport.authenticate("google"),
     (req, res) => {
-        res.redirect("http://localhost:3000");
+        res.redirect(`${process.env.FRONTEND_URL}`);
     }
 );
 
