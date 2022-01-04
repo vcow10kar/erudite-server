@@ -7,6 +7,7 @@ const passport = require('./config/passport');
 const adminController = require('./controllers/admin.controller');
 const studentController = require('./controllers/student.controller');
 const contestController = require('./controllers/contest.controller');
+const authController = require('./controllers/auth.controller');
 
 app.use(cors({ origin: 'https://erudite-sms.vercel.app', credentials: true }));
 app.use(express.json());
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 app.use('/admin', adminController);
 app.use('/student', studentController);
 app.use('/contest', contestController);
+app.use('/auth', authController);
 
 passport.serializeUser(function (user, done) {
     done(null, user);

@@ -4,6 +4,8 @@ const router = express.Router();
 const{body, validationResult} = require('express-validator');
 
 const Student = require('../models/student.model');
+const authenticate = require('../middlewares/authneticate');
+const authorize = require('../middlewares/authorize');
 
 router.get('/', async (req, res) => {
     const students = await Student.find({}).lean().exec();
@@ -55,7 +57,6 @@ router.post('/',
 router.delete('/:id', async (req, res) => {
     const admin = await Student.findByIdAndDelete({_id: req.params.id});
     return res.status(202).send({admin});
-})
-
+});
 
 module.exports = router;
