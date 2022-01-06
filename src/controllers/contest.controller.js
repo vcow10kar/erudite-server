@@ -11,6 +11,12 @@ router.get('/', async (req, res) => {
     return res.status(200).send({contests: contests});
 })
 
+router.get('/:batchNo', async (req, res) => {
+    const contests = await Contest.find({batchNo: req.params.batchNo}).lean().exec();
+
+    return res.status(200).send({contests: contests});
+})
+
 router.post('/',
     body('title')
     .notEmpty()
