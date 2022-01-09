@@ -56,7 +56,7 @@ app.get(
 );
 
 app.get('/getAdmin', (req, res) => {
-    res.send(req.user);
+    return res.send(req.user);
 });
 
 app.get('/auth/logout', (req, res) => {
